@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/home', [CreateController::class, 'home'])->name('home');
 Route::get('/form', [CreateController::class, 'form'])->name('form');
+Route::post('/createform', [CreateController::class, 'formStore'])->name('form_create');
+Route::get('/edit/{id}', [CreateController::class, 'edit'])->name('edit');
+Route::post('/update/{id}', [CreateController::class, 'update'])->name('update');

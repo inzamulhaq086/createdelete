@@ -21,7 +21,7 @@
                                     Road Map Form
                                 </div>
                                 <div class="p-3">
-                                    <form class="w-full" method="POST" action="{{route('form_create')}}" enctype="multipart/form-data">
+                                    <form class="w-full" method="POST" action="{{route('update',$roadmapedit->id)}}" enctype="multipart/form-data">
                                         @csrf
                                         <input type="hidden"  value="">
                                         <div class="flex flex-wrap -mx-3 mb-6">
@@ -34,7 +34,7 @@
                                                     <input
                                                         class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
                                                         name="name" type="text"
-                                                        placeholder="Please write here your name">
+                                                        placeholder="Please write here your name" value="{{$roadmapedit->name}}">
                                                 </div>
                                                 <div class="mt-1">
                                                     <label
@@ -44,7 +44,7 @@
                                                     <input
                                                         class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
                                                         name="year" type="number"
-                                                        placeholder="Please write here your year">
+                                                        placeholder="Please write here your year" value="{{$roadmapedit->year}}">
                                                 </div>
                                                 <div class="mt-1">
                                                     <label
@@ -54,7 +54,7 @@
                                                     <input
                                                         class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
                                                         name="title" type="text"
-                                                        placeholder="Please write here your title">
+                                                        placeholder="Please write here your title" value="{{$roadmapedit->title}}">
                                                 </div>
                                                 <div class="mt-1">
                                                     <label
@@ -63,12 +63,13 @@
                                                     </label>
                                                     <textarea id="about" name="discription" rows="3"
                                                         class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-                                                        placeholder="Please write here your title"></textarea>
+                                                        placeholder="Please write here your title">{{$roadmapedit->discription}}</textarea>
                                                 </div>
                                                 <div>
                                                     <label class="block text-sm font-medium text-gray-700">
                                                         Cover photo
                                                     </label>
+                                                    <img class="w-20" src="{{asset('storage/'.$roadmapedit->cover_img) }}" alt="">
                                                     <div
                                                         class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                                         <div class="space-y-1 text-center">
