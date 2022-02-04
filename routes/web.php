@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BlogFrom;
+use App\Http\Controllers\BlogFromsController;
 use App\Http\Controllers\CreateController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +24,6 @@ Route::get('/form', [CreateController::class, 'form'])->name('form');
 Route::post('/createform', [CreateController::class, 'formStore'])->name('form_create');
 Route::get('/edit/{id}', [CreateController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [CreateController::class, 'update'])->name('update');
+Route::get('/blog', [BlogFromsController::class, 'blog'])->name('blog');
+Route::post('/createblog', [BlogFromsController::class, 'blogstore'])->name('blog_store');
+Route::get('/blogform', [BlogFromsController::class, 'blogform'])->name('blogform');

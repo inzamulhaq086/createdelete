@@ -52,19 +52,25 @@ class CreateController extends Controller
             'name' => 'required|max:25',
             'year' => 'required',
             'title' => 'required|max:255',
-            'discription' => 'required'
-            // 'cover_img' => 'required|mimes:jpg,bmp,png|max:2048',
+            'discription' => 'required',
+            'cover_img' => 'required|mimes:jpg,bmp,png|max:2048',
         ]);
-        $updated = RoadMap::where('id', $roadmap)->update([
-            'name' =>  $request->name,
-            'year' =>  $request->year,
-            'title' =>  $request->title,
-            'discription' =>  $request->discription
-            // 'cover_img' => $request->file('cover_img')->store('images/coins')
-        ]);
-        if (empty($updated)) {
+
+        $road =  RoadMap::find($roadmap);
+
+        $road->name = $request->name;
+        $road->year =  $request->year;
+        $road->title =  $request->title;
+        $road->discription =  $request->discription;
+        $road->cover_img =  $request->file('cover_img')->store('images/coins');
+        $road->save();
+
+            
+
+        if (empty($road)) {
             return back()->with('ERROR', "Fill Kor age");
         }
         return redirect()->route('home')->with('SUCCESS', "Valo Korsesis");
     }
+ 
 }

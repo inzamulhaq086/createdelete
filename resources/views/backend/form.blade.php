@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{asset('/css/tailwind.css')}}">
-</head>
-
-<body>
+@extends('backend.layouts.app')
+@section('content')
     <div class="container px-4 mx-auto max-w-xl">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full px-4">
@@ -111,5 +101,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection
