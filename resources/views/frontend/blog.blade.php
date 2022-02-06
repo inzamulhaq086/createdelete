@@ -18,7 +18,7 @@
                             <h1 class="w-full text-white text-3xl font-bold leading-9">{{ $blogcreate->discription }}
                             </h1>
                             <p class="w-full text-gray-300 text-lg leading-8"></p>
-                            <a href=""
+                            <a href="{{route('blogedit',$blogcreate->id)}}"
                                 class="inline-block bg-indigo-500 py-4 px-8 hover:bg-indigo-600 font-bold text-white">Edit</a>
                             <a href=""
                                 class="inline-block bg-red-500 py-4 px-8 hover:bg-red-600 font-bold text-white">Delete</a>

@@ -39,4 +39,33 @@ class BlogFromsController extends Controller
         
         return redirect()->route('blog')->with('SUCCESS', "Valo Korsesis");
     }
+
+
+
+    public function blogedit($blogupdt)
+    {
+        $data['blogpostupdate'] = Blogfrom::where('id', $blogupdt)->first();
+        return view('backend.blogupdate', $data);
+    }
+
+    public function blogupdate(Request $request, $blogupdt)
+    {
+         $request->validate([
+            'title' => 'required|max:255',
+            'discription' => 'required',
+            'cover_img' => 'required|mimes:jpg,bmp,png|max:2048'
+        ]);
+
+        $blogupdates = Blogfrom::find($blogupdt);
+        $blogupdates->title =  $request->title;
+        $blogupdates->discription =  $request->discription;
+        $blogupdates->cover_img =  $request->file('cover_img')->store('images/coins');
+        $blogupdates->save();
+
+        if (empty($blogupdates)) {
+            return back()->with('ERROR', "Fill Kor age");
+        }
+        
+        return redirect()->route('blog')->with('SUCCESS', "Valo Korsesis");
+    }
 }

@@ -27,3 +27,5 @@ Route::post('/update/{id}', [CreateController::class, 'update'])->name('update')
 Route::get('/blog', [BlogFromsController::class, 'blog'])->name('blog');
 Route::post('/createblog', [BlogFromsController::class, 'blogstore'])->name('blog_store');
 Route::get('/blogform', [BlogFromsController::class, 'blogform'])->name('blogform');
+Route::get('/blogedit/{id}', [BlogFromsController::class, 'blogedit'])->name('blogedit');
+Route::post('/blogupdate/{id}', [BlogFromsController::class, 'blogupdate'])->name('blogupdate');
