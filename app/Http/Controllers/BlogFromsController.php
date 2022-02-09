@@ -68,4 +68,14 @@ class BlogFromsController extends Controller
         
         return redirect()->route('blog')->with('SUCCESS', "Valo Korsesis");
     }
+
+    public function blogdelete($blog_delete){
+       $blogdel = Blogfrom::where('id',$blog_delete)->delete();
+
+       if (empty($blogdel)) {
+        return back()->with('ERROR', "Something went Wrong");
+    }
+    
+    return back()->with('SUCCESS', "Delete Successfully");
+    }
 }

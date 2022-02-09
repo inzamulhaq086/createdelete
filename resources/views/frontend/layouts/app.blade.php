@@ -11,7 +11,12 @@
 
 <body>
     @yield('content')
-   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        setTimeout(function() {
+            $('#successMessage').fadeOut('fast');
+        }, 2000); // <-- time in milliseconds
+    </script>
 </body>
 
 </html>

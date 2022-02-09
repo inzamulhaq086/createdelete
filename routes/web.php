@@ -29,3 +29,4 @@ Route::post('/createblog', [BlogFromsController::class, 'blogstore'])->name('blo
 Route::get('/blogform', [BlogFromsController::class, 'blogform'])->name('blogform');
 Route::get('/blogedit/{id}', [BlogFromsController::class, 'blogedit'])->name('blogedit');
 Route::post('/blogupdate/{id}', [BlogFromsController::class, 'blogupdate'])->name('blogupdate');
+Route::get('/blogdelete/{id}', [BlogFromsController::class, 'blogdelete'])->name('blogdelete');

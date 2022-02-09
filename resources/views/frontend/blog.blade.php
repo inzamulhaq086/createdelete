@@ -6,6 +6,19 @@
                 <a href="{{ route('blogform') }}"
                     class="inline-block bg-indigo-500 py-4 px-8 hover:bg-indigo-600 font-bold text-white">Create</a>
             </div>
+            @if (session('SUCCESS'))
+                <div id="successMessage"
+                    class="px-4 py-2 m-4 max-w-3xl mx-auto text-center text-gray-500 border border-green-600 bg-green-600">
+                    {{ session('SUCCESS') }}
+                </div>
+            @endif
+
+            @if (session('ERROR'))
+                <div id="successMessage"
+                    class="px-4 py-2 m-4 max-w-3xl mx-auto text-center text-white border border-red-600 bg-red-600">
+                    {{ session('ERROR') }}
+                </div>
+            @endif
             @if (!empty($blogcreates))
                 @foreach ($blogcreates as $blogcreate)
                     <div class="w-full px-4 my-4">
@@ -20,7 +33,7 @@
                             <p class="w-full text-gray-300 text-lg leading-8"></p>
                             <a href="{{route('blogedit',$blogcreate->id)}}"
                                 class="inline-block bg-indigo-500 py-4 px-8 hover:bg-indigo-600 font-bold text-white">Edit</a>
-                            <a href=""
+                            <a href="{{route('blogdelete',$blogcreate->id)}}"
                                 class="inline-block bg-red-500 py-4 px-8 hover:bg-red-600 font-bold text-white">Delete</a>
                         </div>
                     </div>

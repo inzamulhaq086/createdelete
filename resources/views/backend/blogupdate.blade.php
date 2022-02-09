@@ -7,10 +7,10 @@
                 <div class="flex flex-col">
                     <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
                         <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
-                            <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
+                            <div class="text-gray-600 bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
                                 Road Map Form
                             </div>
-                            <div class="p-3">
+                            <div class="p-3">                           
                                 <form class="w-full" method="POST" action="{{route('blogupdate',$blogpostupdate->id)}}"enctype="multipart/form-data" >
                                     @csrf
                                     <input type="hidden"  value="">
