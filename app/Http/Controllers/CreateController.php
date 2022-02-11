@@ -72,5 +72,15 @@ class CreateController extends Controller
         }
         return redirect()->route('home')->with('SUCCESS', "Valo Korsesis");
     }
+
+    public function deletepost($deleted){
+        $postdelete = RoadMap::where('id',$deleted)->delete();
+        if (empty($postdelete)) {
+            return back()->with('ERROR', "Something went Wrong");
+        }
+        
+        return back()->with('SUCCESS', "Delete Successfully");
+        
+    }
  
 }

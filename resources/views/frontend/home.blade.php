@@ -21,7 +21,7 @@
                         <p class="w-full text-gray-300 text-lg leading-8">{{$roadmap->discription}}</p>
                         <a href="{{route('edit',$roadmap->id)}}"
                             class="inline-block bg-indigo-500 py-4 px-8 hover:bg-indigo-600 font-bold text-white">Edit</a>
-                        <a href="{{$roadmap->id}}"
+                        <a href="{{route('deletepost', $roadmap->id)}}"
                             class="inline-block bg-red-500 py-4 px-8 hover:bg-red-600 font-bold text-white">Delete</a>
                     </div>
                 </div>
