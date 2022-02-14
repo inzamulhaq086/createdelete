@@ -23,9 +23,12 @@
                             class="inline-block bg-indigo-500 py-4 px-8 hover:bg-indigo-600 font-bold text-white">Edit</a>
                         <a href="{{route('deletepost', $roadmap->id)}}"
                             class="inline-block bg-red-500 py-4 px-8 hover:bg-red-600 font-bold text-white">Delete</a>
+                        <a href="{{route('copypost', $roadmap->id)}}"
+                            class="inline-block bg-red-500 py-4 px-8 hover:bg-red-600 font-bold text-white">Copy</a>
                     </div>
                 </div>
             @endforeach
+            {!! $roadmaps->links() !!}
         @endif
     </div>
 </div>

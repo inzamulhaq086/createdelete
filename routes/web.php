@@ -25,6 +25,7 @@ Route::post('/createform', [CreateController::class, 'formStore'])->name('form_c
 Route::get('/edit/{id}', [CreateController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [CreateController::class, 'update'])->name('update');
 Route::get('/delete/{id}', [CreateController::class, 'deletepost'])->name('deletepost');
+Route::get('/copy/{id}', [CreateController::class, 'copypost'])->name('copypost');
 Route::get('/blog', [BlogFromsController::class, 'blog'])->name('blog');
 Route::post('/createblog', [BlogFromsController::class, 'blogstore'])->name('blog_store');
 Route::get('/blogform', [BlogFromsController::class, 'blogform'])->name('blogform');

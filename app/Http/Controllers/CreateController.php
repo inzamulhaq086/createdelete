@@ -83,4 +83,21 @@ class CreateController extends Controller
         
     }
  
+    public function copypost($copyposted){
+        $postcopy = RoadMap::where('id',$copyposted)->first();
+        $createnew = RoadMap::create([
+            'name' => $postcopy->name,
+            'year' => $postcopy->year,
+            'title' => $postcopy->title,
+            'discription' => $postcopy->discription,
+            'cover_img' => $postcopy->cover_img,
+        ]);
+        if (empty($createnew)) {
+            return back()->with('ERROR', "Something went Wrong");
+        }
+        
+        return redirect()->route('home')->with('SUCCESS', "Copy Successfully");
+        
+    }
+ 
 }
